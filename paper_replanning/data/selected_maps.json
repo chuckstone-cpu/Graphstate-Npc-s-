@@ -1,0 +1,576 @@
+{
+  "master_seed": 42,
+  "selection": {
+    "maps_per_set": 8,
+    "max_side": 256,
+    "_max_side_overrides_comment": "room maps are all 512x512, so none pass 256; allowed up to 512 (runtime to be checked in Prompt 2)",
+    "max_side_overrides": {
+      "room": 512
+    },
+    "min_passable_frac": 0.3,
+    "problems_per_map": 15,
+    "min_bfs_len": 60,
+    "max_bfs_len": 250
+  },
+  "per_set": {
+    "dao": {
+      "maps_in_set": 156,
+      "eligible": 64,
+      "chosen": [
+        "lak304d",
+        "den101d",
+        "den009d",
+        "den504d",
+        "den203d",
+        "isound1",
+        "orz601d",
+        "rmtst03"
+      ],
+      "rejected_for_problems": [
+        {
+          "map_name": "orz102d",
+          "qualifying_problems": 0,
+          "tried": 110,
+          "blocked_endpoint": 0,
+          "unreachable": 0,
+          "too_short": 110,
+          "too_long": 0,
+          "duplicate": 0
+        },
+        {
+          "map_name": "lak102d",
+          "qualifying_problems": 0,
+          "tried": 100,
+          "blocked_endpoint": 0,
+          "unreachable": 0,
+          "too_short": 100,
+          "too_long": 0,
+          "duplicate": 0
+        },
+        {
+          "map_name": "ost102d",
+          "qualifying_problems": 0,
+          "tried": 60,
+          "blocked_endpoint": 0,
+          "unreachable": 0,
+          "too_short": 60,
+          "too_long": 0,
+          "duplicate": 0
+        },
+        {
+          "map_name": "lak107d",
+          "qualifying_problems": 0,
+          "tried": 100,
+          "blocked_endpoint": 0,
+          "unreachable": 0,
+          "too_short": 100,
+          "too_long": 0,
+          "duplicate": 0
+        },
+        {
+          "map_name": "orz107d",
+          "qualifying_problems": 0,
+          "tried": 100,
+          "blocked_endpoint": 0,
+          "unreachable": 0,
+          "too_short": 100,
+          "too_long": 0,
+          "duplicate": 0
+        },
+        {
+          "map_name": "lak108d",
+          "qualifying_problems": 0,
+          "tried": 60,
+          "blocked_endpoint": 0,
+          "unreachable": 0,
+          "too_short": 60,
+          "too_long": 0,
+          "duplicate": 0
+        },
+        {
+          "map_name": "lak105d",
+          "qualifying_problems": 0,
+          "tried": 90,
+          "blocked_endpoint": 0,
+          "unreachable": 0,
+          "too_short": 90,
+          "too_long": 0,
+          "duplicate": 0
+        },
+        {
+          "map_name": "den201d",
+          "qualifying_problems": 0,
+          "tried": 100,
+          "blocked_endpoint": 0,
+          "unreachable": 0,
+          "too_short": 100,
+          "too_long": 0,
+          "duplicate": 0
+        },
+        {
+          "map_name": "lgt101d",
+          "qualifying_problems": 0,
+          "tried": 110,
+          "blocked_endpoint": 0,
+          "unreachable": 0,
+          "too_short": 110,
+          "too_long": 0,
+          "duplicate": 0
+        },
+        {
+          "map_name": "lak104d",
+          "qualifying_problems": 3,
+          "tried": 120,
+          "blocked_endpoint": 0,
+          "unreachable": 0,
+          "too_short": 117,
+          "too_long": 0,
+          "duplicate": 0
+        }
+      ],
+      "shortfall": 0
+    },
+    "street": {
+      "maps_in_set": 90,
+      "eligible": 30,
+      "chosen": [
+        "Shanghai_2_256",
+        "Shanghai_0_256",
+        "Boston_1_256",
+        "Sydney_1_256",
+        "Sydney_0_256",
+        "Paris_1_256",
+        "Milan_2_256",
+        "Paris_0_256"
+      ],
+      "rejected_for_problems": [],
+      "shortfall": 0
+    },
+    "room": {
+      "maps_in_set": 40,
+      "eligible": 40,
+      "chosen": [
+        "64room_000",
+        "8room_000",
+        "16room_005",
+        "16room_009",
+        "16room_001",
+        "64room_006",
+        "64room_009",
+        "16room_003"
+      ],
+      "rejected_for_problems": [],
+      "shortfall": 0
+    }
+  },
+  "maps": [
+    {
+      "map_set": "dao",
+      "map_name": "lak304d",
+      "width": 193,
+      "height": 194,
+      "passable_pct": 48.23,
+      "map_file": "dao/lak304d.map",
+      "scen_file": "dao/lak304d.map.scen",
+      "problem_stats": {
+        "tried": 28,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 3,
+        "too_long": 10,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "dao",
+      "map_name": "den101d",
+      "width": 73,
+      "height": 41,
+      "passable_pct": 45.44,
+      "map_file": "dao/den101d.map",
+      "scen_file": "dao/den101d.map.scen",
+      "problem_stats": {
+        "tried": 33,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 18,
+        "too_long": 0,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "dao",
+      "map_name": "den009d",
+      "width": 50,
+      "height": 34,
+      "passable_pct": 59.0,
+      "map_file": "dao/den009d.map",
+      "scen_file": "dao/den009d.map.scen",
+      "problem_stats": {
+        "tried": 70,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 55,
+        "too_long": 0,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "dao",
+      "map_name": "den504d",
+      "width": 158,
+      "height": 227,
+      "passable_pct": 37.44,
+      "map_file": "dao/den504d.map",
+      "scen_file": "dao/den504d.map.scen",
+      "problem_stats": {
+        "tried": 22,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 5,
+        "too_long": 2,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "dao",
+      "map_name": "den203d",
+      "width": 93,
+      "height": 77,
+      "passable_pct": 36.71,
+      "map_file": "dao/den203d.map",
+      "scen_file": "dao/den203d.map.scen",
+      "problem_stats": {
+        "tried": 26,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 11,
+        "too_long": 0,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "dao",
+      "map_name": "isound1",
+      "width": 55,
+      "height": 63,
+      "passable_pct": 85.89,
+      "map_file": "dao/isound1.map",
+      "scen_file": "dao/isound1.map.scen",
+      "problem_stats": {
+        "tried": 41,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 26,
+        "too_long": 0,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "dao",
+      "map_name": "orz601d",
+      "width": 107,
+      "height": 47,
+      "passable_pct": 37.58,
+      "map_file": "dao/orz601d.map",
+      "scen_file": "dao/orz601d.map.scen",
+      "problem_stats": {
+        "tried": 35,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 20,
+        "too_long": 0,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "dao",
+      "map_name": "rmtst03",
+      "width": 182,
+      "height": 49,
+      "passable_pct": 63.13,
+      "map_file": "dao/rmtst03.map",
+      "scen_file": "dao/rmtst03.map.scen",
+      "problem_stats": {
+        "tried": 19,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 4,
+        "too_long": 0,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "street",
+      "map_name": "Shanghai_2_256",
+      "width": 256,
+      "height": 256,
+      "passable_pct": 73.91,
+      "map_file": "street/Shanghai_2_256.map",
+      "scen_file": "street/Shanghai_2_256.map.scen",
+      "problem_stats": {
+        "tried": 45,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 11,
+        "too_long": 19,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "street",
+      "map_name": "Shanghai_0_256",
+      "width": 256,
+      "height": 256,
+      "passable_pct": 74.32,
+      "map_file": "street/Shanghai_0_256.map",
+      "scen_file": "street/Shanghai_0_256.map.scen",
+      "problem_stats": {
+        "tried": 40,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 6,
+        "too_long": 19,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "street",
+      "map_name": "Boston_1_256",
+      "width": 256,
+      "height": 256,
+      "passable_pct": 73.68,
+      "map_file": "street/Boston_1_256.map",
+      "scen_file": "street/Boston_1_256.map.scen",
+      "problem_stats": {
+        "tried": 29,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 1,
+        "too_long": 13,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "street",
+      "map_name": "Sydney_1_256",
+      "width": 256,
+      "height": 256,
+      "passable_pct": 73.75,
+      "map_file": "street/Sydney_1_256.map",
+      "scen_file": "street/Sydney_1_256.map.scen",
+      "problem_stats": {
+        "tried": 25,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 2,
+        "too_long": 8,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "street",
+      "map_name": "Sydney_0_256",
+      "width": 256,
+      "height": 256,
+      "passable_pct": 73.77,
+      "map_file": "street/Sydney_0_256.map",
+      "scen_file": "street/Sydney_0_256.map.scen",
+      "problem_stats": {
+        "tried": 39,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 4,
+        "too_long": 20,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "street",
+      "map_name": "Paris_1_256",
+      "width": 256,
+      "height": 256,
+      "passable_pct": 72.08,
+      "map_file": "street/Paris_1_256.map",
+      "scen_file": "street/Paris_1_256.map.scen",
+      "problem_stats": {
+        "tried": 39,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 4,
+        "too_long": 20,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "street",
+      "map_name": "Milan_2_256",
+      "width": 256,
+      "height": 256,
+      "passable_pct": 73.06,
+      "map_file": "street/Milan_2_256.map",
+      "scen_file": "street/Milan_2_256.map.scen",
+      "problem_stats": {
+        "tried": 33,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 4,
+        "too_long": 14,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "street",
+      "map_name": "Paris_0_256",
+      "width": 256,
+      "height": 256,
+      "passable_pct": 73.11,
+      "map_file": "street/Paris_0_256.map",
+      "scen_file": "street/Paris_0_256.map.scen",
+      "problem_stats": {
+        "tried": 36,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 3,
+        "too_long": 18,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "room",
+      "map_name": "64room_000",
+      "width": 512,
+      "height": 512,
+      "passable_pct": 93.91,
+      "map_file": "room/64room_000.map",
+      "scen_file": "room/64room_000.map.scen",
+      "problem_stats": {
+        "tried": 53,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 4,
+        "too_long": 34,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "room",
+      "map_name": "8room_000",
+      "width": 512,
+      "height": 512,
+      "passable_pct": 78.83,
+      "map_file": "room/8room_000.map",
+      "scen_file": "room/8room_000.map.scen",
+      "problem_stats": {
+        "tried": 73,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 2,
+        "too_long": 56,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "room",
+      "map_name": "16room_005",
+      "width": 512,
+      "height": 512,
+      "passable_pct": 88.18,
+      "map_file": "room/16room_005.map",
+      "scen_file": "room/16room_005.map.scen",
+      "problem_stats": {
+        "tried": 77,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 3,
+        "too_long": 59,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "room",
+      "map_name": "16room_009",
+      "width": 512,
+      "height": 512,
+      "passable_pct": 87.67,
+      "map_file": "room/16room_009.map",
+      "scen_file": "room/16room_009.map.scen",
+      "problem_stats": {
+        "tried": 75,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 10,
+        "too_long": 50,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "room",
+      "map_name": "16room_001",
+      "width": 512,
+      "height": 512,
+      "passable_pct": 88.25,
+      "map_file": "room/16room_001.map",
+      "scen_file": "room/16room_001.map.scen",
+      "problem_stats": {
+        "tried": 76,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 7,
+        "too_long": 54,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "room",
+      "map_name": "64room_006",
+      "width": 512,
+      "height": 512,
+      "passable_pct": 96.94,
+      "map_file": "room/64room_006.map",
+      "scen_file": "room/64room_006.map.scen",
+      "problem_stats": {
+        "tried": 72,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 2,
+        "too_long": 55,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "room",
+      "map_name": "64room_009",
+      "width": 512,
+      "height": 512,
+      "passable_pct": 96.94,
+      "map_file": "room/64room_009.map",
+      "scen_file": "room/64room_009.map.scen",
+      "problem_stats": {
+        "tried": 122,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 6,
+        "too_long": 101,
+        "duplicate": 0
+      }
+    },
+    {
+      "map_set": "room",
+      "map_name": "16room_003",
+      "width": 512,
+      "height": 512,
+      "passable_pct": 88.26,
+      "map_file": "room/16room_003.map",
+      "scen_file": "room/16room_003.map.scen",
+      "problem_stats": {
+        "tried": 85,
+        "blocked_endpoint": 0,
+        "unreachable": 0,
+        "too_short": 2,
+        "too_long": 68,
+        "duplicate": 0
+      }
+    }
+  ]
+}
