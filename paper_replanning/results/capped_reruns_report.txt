@@ -1,0 +1,63 @@
+5760 runs, 52 cut off by the cap (10 x opt + 100), 0 failed for another reason
+re-running them with max_steps = 30 x opt + 100 on 11 workers...
+
+per run:
+                                            opt  old_steps (cap)  new_steps  new_cap  new/opt  success  counts identical
+run_id                                                                                                                  
+room/16room_001/129|astar_restart|saboteur   62              720        816     1960    13.16     True              True
+room/16room_003/124|dstar_lite|saboteur      62              720        942     1960    15.19     True              True
+room/16room_003/167|bfs_restart|saboteur     79              890        927     2470    11.73     True              True
+room/16room_001/130|astar_lazy|saboteur      60              700        780     1900    13.00     True              True
+room/64room_009/389|astar_restart|saboteur  159             1690       1717     4870    10.80     True              True
+room/64room_000/234|dstar_lite|saboteur     108             1180       1286     3340    11.91     True              True
+room/64room_000/234|astar_lazy|saboteur     108             1180       1536     3340    14.22     True              True
+room/16room_009/154|astar_lazy|saboteur      71              810        939     2230    13.23     True              True
+room/64room_009/218|bfs_restart|saboteur     88              980       1008     2740    11.45     True              True
+room/64room_009/181|astar_lazy|saboteur      91             1010       1651     2830    18.14     True              True
+room/64room_006/271|astar_restart|saboteur  131             1410       1493     4030    11.40     True              True
+room/64room_009/169|bfs_restart|saboteur     76              860       1714     2380    22.55     True              True
+room/64room_000/264|astar_lazy|saboteur     123             1330       1507     3790    12.25     True              True
+room/64room_009/169|dstar_lite|saboteur      76              860       1716     2380    22.58     True              True
+room/64room_009/208|bfs_restart|saboteur    109             1190       2091     3370    19.18     True              True
+room/64room_009/248|bfs_restart|saboteur    124             1340       1610     3820    12.98     True              True
+room/64room_009/208|astar_restart|saboteur  109             1190       2085     3370    19.13     True              True
+room/16room_003/167|astar_lazy|saboteur      79              890        923     2470    11.68     True              True
+room/16room_003/124|astar_restart|saboteur   62              720        908     1960    14.65     True              True
+room/64room_009/181|astar_restart|saboteur   91             1010       1651     2830    18.14     True              True
+room/64room_009/181|bfs_restart|saboteur     91             1010       1675     2830    18.41     True              True
+room/64room_000/238|dstar_lite|saboteur     112             1220       1258     3460    11.23     True              True
+room/64room_000/238|bfs_restart|saboteur    112             1220       1258     3460    11.23     True              True
+room/64room_000/238|astar_restart|saboteur  112             1220       1244     3460    11.11     True              True
+room/64room_009/389|astar_lazy|saboteur     159             1690       1717     4870    10.80     True              True
+room/16room_003/148|bfs_restart|saboteur     71              810        839     2230    11.82     True              True
+room/64room_009/218|dstar_lite|saboteur      88              980       1004     2740    11.41     True              True
+room/16room_003/124|astar_lazy|saboteur      62              720        908     1960    14.65     True              True
+room/16room_009/154|dstar_lite|saboteur      71              810        907     2230    12.77     True              True
+room/64room_006/250|dstar_lite|saboteur     125             1350       1459     3850    11.67     True              True
+room/64room_006/271|astar_lazy|saboteur     131             1410       1493     4030    11.40     True              True
+room/16room_001/130|astar_restart|saboteur   60              700        780     1900    13.00     True              True
+room/16room_009/154|astar_restart|saboteur   71              810        939     2230    13.23     True              True
+room/16room_001/129|astar_lazy|saboteur      62              720        816     1960    13.16     True              True
+room/64room_009/248|dstar_lite|saboteur     124             1340       1628     3820    13.13     True              True
+room/64room_009/248|astar_lazy|saboteur     124             1340       1948     3820    15.71     True              True
+room/64room_009/208|astar_lazy|saboteur     109             1190       2085     3370    19.13     True              True
+room/16room_009/170|astar_restart|saboteur   85              950       1095     2650    12.88     True              True
+room/16room_009/170|astar_lazy|saboteur      85              950       1095     2650    12.88     True              True
+room/64room_000/264|astar_restart|saboteur  123             1330       1507     3790    12.25     True              True
+room/64room_009/169|astar_lazy|saboteur      76              860       1508     2380    19.84     True              True
+room/64room_000/234|astar_restart|saboteur  108             1180       1536     3340    14.22     True              True
+room/64room_009/169|astar_restart|saboteur   76              860       1508     2380    19.84     True              True
+room/64room_009/218|astar_restart|saboteur   88              980       1380     2740    15.68     True              True
+room/16room_009/154|bfs_restart|saboteur     71              810        839     2230    11.82     True              True
+room/64room_009/208|dstar_lite|saboteur     109             1190       2087     3370    19.15     True              True
+room/16room_003/167|astar_restart|saboteur   79              890        923     2470    11.68     True              True
+room/64room_009/181|dstar_lite|saboteur      91             1010       2143     2830    23.55     True              True
+room/64room_000/238|astar_lazy|saboteur     112             1220       1244     3460    11.11     True              True
+room/64room_000/230|dstar_lite|saboteur     105             1150       1353     3250    12.89     True              True
+room/64room_009/218|astar_lazy|saboteur      88              980       1380     2740    15.68     True              True
+room/64room_009/248|astar_restart|saboteur  124             1340       1948     3820    15.71     True              True
+
+run columns that must match (20): ALL IDENTICAL
+events (1560 old vs 1560 new, compared on ['run_id', 'step', 'planner', 'prankster', 'block_x', 'block_y', 'dist_block_agent', 'dist_block_goal', 'on_planner_path', 'expansions']): ALL IDENTICAL
+all re-runs reach the goal: True
+timing columns (re-measured, expected to differ): median |old - new| / old = {'replan_time_ms_total': 0.063, 'max_single_replan_ms': 0.091, 'initial_time_ms': 0.137, 'prankster_time_ms': 0.08}

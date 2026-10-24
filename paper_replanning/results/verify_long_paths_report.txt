@@ -1,0 +1,17 @@
+67 runs with a path lower bound >= 1000 cells (re-running with max_steps = 30 x opt + 100, current_path max_len = 10000)
+                                            lower_bound  measured_longest  steps  success
+room/64room_009/181|dstar_lite|saboteur            1994              1999   2143     True
+room/64room_009/208|astar_lazy|saboteur            1936              1946   2085     True
+room/64room_009/208|astar_restart|saboteur         1936              1946   2085     True
+room/64room_009/208|bfs_restart|saboteur           1942              1945   2091     True
+room/64room_009/208|dstar_lite|saboteur            1938              1944   2087     True
+room/64room_009/248|astar_restart|saboteur         1799              1802   1948     True
+room/64room_009/248|astar_lazy|saboteur            1799              1802   1948     True
+room/64room_009/389|astar_restart|saboteur         1568              1578   1717     True
+room/64room_009/389|astar_lazy|saboteur            1568              1578   1717     True
+room/64room_009/169|bfs_restart|saboteur           1565              1570   1714     True
+
+run columns that must match (22, incl. steps and success): ALL IDENTICAL
+events (2010 old vs 2010 new, without time_ms): ALL IDENTICAL
+measured >= lower bound in every run: True
+LONGEST current_path() MEASURED: 1999 cells (old limit 2000, new limit 10000); runs >= 2000: 0, >= 1800: 7

@@ -94,7 +94,8 @@ class PathPlanner(Planner):
         self.idx += 1
         return self.path[self.idx]
 
-    def current_path(self):
+    def current_path(self, max_len=None):
+        # max_len is accepted only so all planners share one interface: a stored path has no limit.
         return self.path[self.idx:]
 
     def on_move(self, agent):
@@ -148,8 +149,9 @@ class DStarLitePlanner(Planner):
     def next_step(self):
         return self.ds.next_step()
 
-    def current_path(self):
-        return self.ds.current_path()
+    def current_path(self, max_len=2000):
+        # 2000 = the port's (and the game's) default; the simulator passes a larger value.
+        return self.ds.current_path(max_len)
 
     def on_move(self, agent):
         # Like the game's goblin: move_start + compute every step. With no changes

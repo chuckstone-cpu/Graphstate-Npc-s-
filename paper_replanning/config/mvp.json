@@ -27,8 +27,12 @@
   },
 
   "sim": {
-    "max_steps_factor": 4,
-    "max_steps_extra": 100
+    "_max_steps_comment": "max_steps = factor * opt_len + extra. Main run (5760 runs): factor 10 (raised from 4 after the smoke run, where saboteur detours on room maps reached 6-7x the optimum).",
+    "max_steps_factor": 10,
+    "max_steps_extra": 100,
+    "_capped_rerun_comment": "52 main-run runs (all saboteur, all room maps) still hit 10x opt + 100. They were re-run by scripts/rerun_capped.py with factor 30 and merged into runs.csv by scripts/merge_capped_reruns.py; the re-runs matched the originals exactly except steps, success and timings.",
+    "capped_rerun_max_steps_factor": 30,
+    "_path_max_len_comment": "Not read from here: src/sim.py asks D* Lite for current_path(max_len=10000) (PATH_MAX_LEN). The port keeps the game's default of 2000. Longest path measured: 1999 cells."
   },
 
   "analysis": {
