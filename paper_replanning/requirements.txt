@@ -1,0 +1,7 @@
+# The search code itself uses only the Python standard library.
+# These are for tests, progress bars and the analysis stage.
+pandas
+scipy
+matplotlib
+pytest
+tqdm

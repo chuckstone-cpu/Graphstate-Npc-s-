@@ -1,0 +1,37 @@
+{
+  "_comment": "All experiment parameters for the MVP run. Change values here, never inside the code.",
+  "master_seed": 42,
+
+  "data": {
+    "base_url": "https://www.movingai.com/benchmarks",
+    "map_sets": ["dao", "street", "room"]
+  },
+
+  "selection": {
+    "maps_per_set": 8,
+    "max_side": 256,
+    "_max_side_overrides_comment": "room maps are all 512x512, so none pass 256; allowed up to 512 (runtime to be checked in Prompt 2)",
+    "max_side_overrides": {"room": 512},
+    "min_passable_frac": 0.30,
+    "problems_per_map": 15,
+    "min_bfs_len": 60,
+    "max_bfs_len": 250
+  },
+
+  "prankster": {
+    "act_every_k_steps": 5,
+    "max_blocks_per_run": 30,
+    "local_radius": 8,
+    "saboteur_candidates": 12,
+    "max_tries": 20
+  },
+
+  "sim": {
+    "max_steps_factor": 4,
+    "max_steps_extra": 100
+  },
+
+  "analysis": {
+    "bootstrap_resamples": 2000
+  }
+}

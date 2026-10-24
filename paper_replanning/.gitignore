@@ -1,0 +1,7 @@
+# Downloaded benchmark files (re-download with scripts/download_maps.py)
+data/raw/
+# Python / tool caches
+__pycache__/
+.venv/
+.pytest_cache/
+# results/events.csv goes here too if it ever grows past 50 MB
