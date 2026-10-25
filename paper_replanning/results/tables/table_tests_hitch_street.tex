@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Paired comparison of worst single replan (hitch) (street). Win = D* Lite searched less; ratio = median D*/baseline over the n problems where the baseline is > 0; r = rank-biserial, positive favours D* Lite; p from the Wilcoxon signed-rank test.}
+\label{tab:tests-hitch-street}
+\begin{tabular}{llllllll}
+\toprule
+prankster & comparison & pairs & win/tie/loss & median ratio (n) & r & p & p (Holm) \\
+\midrule
+random global & D* Lite vs A* lazy & 120 & 7/61/52 & 0.011 (7) & -0.56 & < 0.001 & < 0.001 \\
+random global & D* Lite vs A* restart & 120 & 120/0/0 & 0 (120) & 1.0 & < 0.001 & < 0.001 \\
+random local & D* Lite vs A* lazy & 120 & 69/4/47 & 0.033 (85) & 0.60 & < 0.001 & < 0.001 \\
+random local & D* Lite vs A* restart & 120 & 114/0/6 & 0.0068 (120) & 0.98 & < 0.001 & < 0.001 \\
+saboteur & D* Lite vs A* lazy & 120 & 67/0/53 & 0.9 (120) & 0.21 & 0.050 & 0.351 \\
+saboteur & D* Lite vs A* restart & 120 & 67/0/53 & 0.9 (120) & 0.21 & 0.050 & 0.351 \\
+\bottomrule
+\end{tabular}
+\end{table}

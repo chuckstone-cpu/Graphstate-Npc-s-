@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Mean replanning work in expansions, with 95\% bootstrap CI (street, n = 120 runs per cell).}
+\label{tab:replan-street}
+\begin{tabular}{lllll}
+\toprule
+planner & none & random global & random local & saboteur \\
+\midrule
+BFS restart & 0.00 [0.00, 0.00] & 328,915 [285,868, 372,211] & 330,199 [286,533, 375,907] & 402,486 [351,225, 452,600] \\
+A* restart & 0.00 [0.00, 0.00] & 15,678 [12,010, 20,092] & 15,697 [12,012, 20,243] & 28,597 [20,807, 37,428] \\
+A* lazy & 0.00 [0.00, 0.00] & 63.5 [11.7, 137] & 620 [378, 936] & 28,597 [20,807, 37,428] \\
+D* Lite & 0.00 [0.00, 0.00] & 3.3 [0.88, 7.9] & 74.7 [47.7, 111] & 5,162 [3,975, 6,464] \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Mean worst single replan (hitch) in expansions, with 95\% bootstrap CI (street, n = 120 runs per cell).}
+\label{tab:hitch-street}
+\begin{tabular}{lllll}
+\toprule
+planner & none & random global & random local & saboteur \\
+\midrule
+BFS restart & 0.00 [0.00, 0.00] & 21,222 [19,241, 23,115] & 21,225 [19,325, 23,206] & 21,952 [20,013, 24,079] \\
+A* restart & 0.00 [0.00, 0.00] & 1,266 [972, 1,597] & 1,266 [985, 1,585] & 2,043 [1,497, 2,696] \\
+A* lazy & 0.00 [0.00, 0.00] & 63.5 [9.9, 137] & 416 [286, 562] & 2,043 [1,497, 2,696] \\
+D* Lite & 0.00 [0.00, 0.00] & 3.0 [0.62, 7.4] & 57.7 [36.7, 84.6] & 1,751 [1,237, 2,291] \\
+\bottomrule
+\end{tabular}
+\end{table}

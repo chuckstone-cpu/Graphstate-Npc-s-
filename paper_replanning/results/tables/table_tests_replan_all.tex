@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Paired comparison of replanning work (All maps). Win = D* Lite searched less; ratio = median D*/baseline over the n problems where the baseline is > 0; r = rank-biserial, positive favours D* Lite; p from the Wilcoxon signed-rank test.}
+\label{tab:tests-replan-all}
+\begin{tabular}{llllllll}
+\toprule
+prankster & comparison & pairs & win/tie/loss & median ratio (n) & r & p & p (Holm) \\
+\midrule
+random global & D* Lite vs A* lazy & 360 & 37/188/135 & 0.067 (37) & -0.26 & 0.003 & 0.026 \\
+random global & D* Lite vs A* restart & 360 & 360/0/0 & 0 (360) & 1.0 & < 0.001 & < 0.001 \\
+random local & D* Lite vs A* lazy & 360 & 207/19/134 & 0.055 (236) & 0.61 & < 0.001 & < 0.001 \\
+random local & D* Lite vs A* restart & 360 & 360/0/0 & 0.0015 (360) & 1.0 & < 0.001 & < 0.001 \\
+saboteur & D* Lite vs A* lazy & 360 & 351/0/9 & 0.27 (360) & 0.98 & < 0.001 & < 0.001 \\
+saboteur & D* Lite vs A* restart & 360 & 351/0/9 & 0.27 (360) & 0.98 & < 0.001 & < 0.001 \\
+\bottomrule
+\end{tabular}
+\end{table}

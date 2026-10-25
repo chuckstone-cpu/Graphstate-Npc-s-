@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\small
+\caption{SECONDARY: mean total search time in ms (first plan + replans), 95\% bootstrap CI (n = 360 runs per cell). Python timing is noisy; use expansions for conclusions.}
+\label{tab:time-total}
+\begin{tabular}{lllll}
+\toprule
+planner & none & random global & random local & saboteur \\
+\midrule
+BFS restart & 65.6 [59.3, 72.4] & 918 [810, 1,033] & 946 [832, 1,059] & 4,429 [3,795, 5,069] \\
+A* restart & 28.8 [24.8, 32.9] & 298 [253, 344] & 302 [257, 349] & 5,573 [4,373, 6,814] \\
+A* lazy & 27.8 [24.1, 31.8] & 28.7 [24.6, 33.0] & 40.5 [34.6, 47.3] & 5,534 [4,367, 6,737] \\
+D* Lite & 140 [128, 153] & 140 [128, 154] & 150 [137, 165] & 6,079 [4,831, 7,449] \\
+\bottomrule
+\end{tabular}
+\end{table}

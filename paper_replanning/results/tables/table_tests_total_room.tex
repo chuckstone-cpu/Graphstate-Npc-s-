@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Paired comparison of total search work (first plan + replanning) (room). Win = D* Lite searched less; ratio = median D*/baseline over the n problems where the baseline is > 0; r = rank-biserial, positive favours D* Lite; p from the Wilcoxon signed-rank test.}
+\label{tab:tests-total-room}
+\begin{tabular}{llllllll}
+\toprule
+prankster & comparison & pairs & win/tie/loss & median ratio (n) & r & p & p (Holm) \\
+\midrule
+none & D* Lite vs A* lazy & 120 & 35/0/85 & 1.4 (120) & -0.52 & < 0.001 & < 0.001 \\
+none & D* Lite vs A* restart & 120 & 35/0/85 & 1.4 (120) & -0.52 & < 0.001 & < 0.001 \\
+random global & D* Lite vs A* lazy & 120 & 35/0/85 & 1.4 (120) & -0.52 & < 0.001 & < 0.001 \\
+random global & D* Lite vs A* restart & 120 & 112/0/8 & 0.15 (120) & 0.98 & < 0.001 & < 0.001 \\
+random local & D* Lite vs A* lazy & 120 & 48/0/72 & 1.2 (120) & -0.16 & 0.122 & 0.612 \\
+random local & D* Lite vs A* restart & 120 & 112/0/8 & 0.16 (120) & 0.98 & < 0.001 & < 0.001 \\
+saboteur & D* Lite vs A* lazy & 120 & 115/0/5 & 0.29 (120) & 0.99 & < 0.001 & < 0.001 \\
+saboteur & D* Lite vs A* restart & 120 & 115/0/5 & 0.29 (120) & 0.99 & < 0.001 & < 0.001 \\
+\bottomrule
+\end{tabular}
+\end{table}

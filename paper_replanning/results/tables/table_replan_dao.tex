@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Mean replanning work in expansions, with 95\% bootstrap CI (dao, n = 120 runs per cell).}
+\label{tab:replan-dao}
+\begin{tabular}{lllll}
+\toprule
+planner & none & random global & random local & saboteur \\
+\midrule
+BFS restart & 0.00 [0.00, 0.00] & 64,191 [48,671, 80,468] & 64,397 [49,557, 80,929] & 80,921 [61,803, 101,173] \\
+A* restart & 0.00 [0.00, 0.00] & 8,956 [5,944, 12,261] & 8,946 [6,081, 12,175] & 14,256 [9,536, 19,819] \\
+A* lazy & 0.00 [0.00, 0.00] & 146 [62.6, 267] & 456 [280, 664] & 14,256 [9,536, 19,819] \\
+D* Lite & 0.00 [0.00, 0.00] & 29.1 [13.2, 50.6] & 31.6 [20.1, 46.6] & 2,416 [1,812, 3,133] \\
+\bottomrule
+\end{tabular}
+\end{table}

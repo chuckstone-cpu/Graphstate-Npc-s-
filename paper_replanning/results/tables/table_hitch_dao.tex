@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Mean worst single replan (hitch) in expansions, with 95\% bootstrap CI (dao, n = 120 runs per cell).}
+\label{tab:hitch-dao}
+\begin{tabular}{lllll}
+\toprule
+planner & none & random global & random local & saboteur \\
+\midrule
+BFS restart & 0.00 [0.00, 0.00] & 3,896 [3,223, 4,626] & 3,895 [3,240, 4,599] & 4,041 [3,323, 4,794] \\
+A* restart & 0.00 [0.00, 0.00] & 868 [670, 1,087] & 866 [677, 1,088] & 1,036 [786, 1,306] \\
+A* lazy & 0.00 [0.00, 0.00] & 140 [59.4, 255] & 334 [224, 464] & 1,036 [786, 1,306] \\
+D* Lite & 0.00 [0.00, 0.00] & 26.8 [10.9, 48.6] & 23.5 [14.0, 35.3] & 771 [558, 1,003] \\
+\bottomrule
+\end{tabular}
+\end{table}
