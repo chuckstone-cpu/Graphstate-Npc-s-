@@ -19,8 +19,6 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{xcolor}
-\usepackage{placeins}              % \FloatBarrier in the appendix
-
 \graphicspath{{figures/}}
 \newcommand{\dstar}{D*~Lite}
 
@@ -110,11 +108,6 @@ Our contributions are:
       limits of the study (Section~\ref{sec:discussion}).
 \end{itemize}
 
-The short answer has four parts. Against random blocks, lazy A* does the least total work.
-Against the saboteur, \dstar{} does about four times less work than both A* variants. Its worst
-single replan is not reliably smaller. And in Python, its more expensive expansions cancel its
-savings in time.
-
 % =====================================================================================
 \section{Related Work}
 \label{sec:related}
@@ -171,13 +164,8 @@ and solved it with decomposition algorithms. Smith and Song~\cite{smith2020inter
 the field, including dynamic and sequential variants. Our saboteur is a deliberately simple,
 online version of this idea: it blocks one cell at a time, greedily, looking only one step
 ahead, and it does not solve the two-level problem. Its job here is not to be an optimal
-interdictor but to produce changes that \emph{always} hit the character's route.
-
-\subsection{Research gap}
-Studies of incremental search change the map at random or by sensing; studies of interdiction
-optimise the attacker but do not measure the replanning cost of the defender. We measure how
-four common replanning strategies cope with an attacker that targets their route, on real game
-maps, with paired statistics.
+interdictor but to produce changes that \emph{always} hit the character's route. Studies of
+interdiction optimise the attacker; we measure the replanning cost of the defender.
 
 % =====================================================================================
 \section{Background}
@@ -408,14 +396,11 @@ where $R$ are the sums of the ranks of $|d|$ for the differences that favour and
 adjusted~\cite{holm1979}; we call a difference significant if the adjusted $p<0.05$.
 
 \subsection{Data handling}
-In the main run, 52 saboteur runs on room maps hit the step limit. We re-ran them with a limit
-of $30\cdot\mathit{opt}+100$; they matched the original runs exactly in every count and every
-change event, and differed only in the number of steps and in success, so we merged them (with
-backups). All change events happen by step $K\cdot B=150$, so the limit never affected the
-measured search effort. \dstar{}'s \texttt{current\_path} stops after \texttt{max\_len} cells
-(2000 in the game); our simulator asks for up to 10{,}000. The longest planned path we measured
-was 1999 cells, and re-running the 67 runs with the longest paths reproduced every result
-exactly. After the merge, all 5760 runs reached the goal.
+52 saboteur runs on room maps hit the step limit; re-run with $30\cdot\mathit{opt}+100$ they
+matched exactly in every count and change event (all blocks happen by step $K\cdot B=150$), so
+we merged them, and all 5760 runs reached the goal. Our simulator asks \dstar{}'s
+\texttt{current\_path} for up to 10{,}000 cells instead of the game's 2000; the longest path we
+measured was 1999 cells.
 
 % =====================================================================================
 \section{Results}
@@ -427,7 +412,7 @@ exactly. After the merge, all 5760 runs reached the goal.
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=\textwidth]{fig5_total_effort.pdf}
+\includegraphics[width=0.8\textwidth]{fig5_total_effort.pdf}
 \caption{Total search effort per run (first plan plus all replans), mean with 95\% bootstrap CI,
 log scale, for all maps and per map set ($n=360$ runs per point for all maps, 120 per set).}
 \label{fig:total}
@@ -454,16 +439,18 @@ runs on all 360 problems. \dstar{}'s mean total effort is 86{,}989 expansions ag
 for both A* variants, about 4.1$\times$ fewer; it searched less in 305 of the 360 problems
 (median ratio 0.36, $r=+0.89$, Holm $p<0.001$). For the replanning effort alone the picture is
 the same and even clearer: 84{,}390 against 353{,}199 expansions on average, less in 351 of 360
-problems (median ratio 0.27, $r=+0.98$; Tables~\ref{tab:replan} and~\ref{tab:tests-replan},
-Fig.~\ref{fig:replan}). The direction holds on every map set (Appendix): the median ratio of
-total effort is 0.41 on dao, 0.54 on street and 0.29 on room.
+problems (median ratio 0.27, $r=+0.98$, Holm $p<0.001$; Fig.~\ref{fig:replan}). The direction
+holds on every map set (Table~\ref{tab:sets}): the median ratio of total effort is 0.41 on dao,
+0.54 on street and 0.29 on room. Across all per-set tests, no map set shows a significant result
+in the opposite direction to the overall one; seven comparisons that are significant overall are
+not significant in one set (random-global replanning and hitch against A* lazy on dao, the
+saboteur hitch on street and room, and random-local total effort against A* lazy on room).
 
-\input{tables/tab_replan_all.tex}
-\input{tables/tab_tests_replan.tex}
+\input{tables/tab_sets.tex}
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=0.9\textwidth]{fig2_replan_boxplot.pdf}
+\includegraphics[width=0.8\textwidth]{fig2_replan_boxplot.pdf}
 \caption{Replanning effort per run by planner, prankster (rows) and map set (columns). Box:
 quartiles; line: median; points: outliers. Log scale, so 1 is added to every value (a run
 without replans shows as 1). Without changes every planner has 0 replans (not shown).}
@@ -471,7 +458,7 @@ without replans shows as 1). Without changes every planner has 0 replans (not sh
 \end{figure*}
 
 \subsection{The hitch is not reliably reduced}
-The worst single replan is shown in Table~\ref{tab:hitch} and Fig.~\ref{fig:hitch}. Against the
+The worst single replan is shown in Fig.~\ref{fig:hitch} and Table~\ref{tab:tests}. Against the
 random pranksters, \dstar{}'s hitches are small and far below A* restart's. Against the
 saboteur, however, the evidence is weak. The paired test favours \dstar{} over both A* variants
 (213 problems with a smaller hitch, 147 with a larger one; median ratio 0.82, $r=+0.17$, Holm
@@ -482,11 +469,9 @@ or slightly larger (20{,}442 against 20{,}388): some \dstar{} repairs are very l
 notices exactly these rare, large stalls, so our data do not support the claim that \dstar{}
 avoids hitches against a saboteur.
 
-\input{tables/tab_hitch_all.tex}
-
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=\textwidth]{fig3_hitch.pdf}
+\includegraphics[width=0.9\textwidth]{fig3_hitch.pdf}
 \caption{Worst single replan per run (the ``hitch''), mean with 95\% bootstrap CI. Symmetric
 log scale (linear below 1), so a mean of exactly 0 (A* lazy on room against random global blocks
 never replanned) is still drawn.}
@@ -494,8 +479,8 @@ never replanned) is still drawn.}
 \end{figure*}
 
 \subsection{Where the saboteur blocks matters}
-Fig.~\ref{fig:dist} (Appendix) shows the expansions per change event against the distance from
-the blocked cell to the goal. Under the saboteur, \dstar{}'s advantage depends on that distance.
+Grouping the change events by the distance from the blocked cell to the goal shows that, under
+the saboteur, \dstar{}'s advantage depends on that distance.
 For blocks within 25 cells of the goal it has no advantage at all (1{,}387 against 1{,}370
 expansions per event for A*), while for blocks 100--149 cells from the goal it needs about
 7$\times$ fewer (2{,}505 against 18{,}441). This matches the structure of the algorithm: \dstar{}
@@ -520,7 +505,7 @@ no expansions but whose time was not logged.
 All planners follow optimal routes on the current map, so their paths differ only through the
 saboteur's reactions. Without changes and with random changes every planner walks essentially
 the optimal length (mean ratio 1.0). Against the saboteur the trips become 2.8--2.9$\times$ longer
-on average for every planner (Fig.~\ref{fig:overhead}, Appendix), and up to 23.6$\times$ on room
+on average for every planner, and up to 23.6$\times$ on room
 maps, where closing a doorway forces the character around whole rooms.
 
 % =====================================================================================
@@ -556,16 +541,11 @@ times; a player would also notice the rare large repairs that \dstar{} did not a
 % =====================================================================================
 
 \subsection{Discussion}
-The answer to our question depends on what the opponent does. When changes are random, they
-seldom touch the planned route, and a lazy A* that searches only when its route is broken
-does less total work than \dstar{}, whose first plan is more expensive and which repairs a little
-after almost every change. When the opponent targets the route, every change breaks it, lazy A*
-degenerates into A* restart, and \dstar{}'s reuse of its earlier search saves about three
-quarters of the work. This adds a new axis to the open question of when incremental search
-pays~\cite{hernandez2012poorly,hernandez2014mpaa}: not only the map type and the size of the
-changes, but whether the changes are aimed at the route. Two results temper the conclusion:
-\dstar{}'s worst-case repairs are not reliably smaller, and its savings in expansions did not
-become savings in time in our implementation.
+The answer depends on what the opponent does. Random changes seldom touch the route, so lazy A*
+wins; changes aimed at the route break it every time, so lazy A* degenerates into A* restart and
+\dstar{}'s reuse of its earlier search saves about three quarters of the work. This adds a new
+axis to the open question of when incremental search
+pays~\cite{hernandez2012poorly,hernandez2014mpaa}: whether the changes are aimed at the route.
 
 \subsection{Threats to validity}
 \begin{itemize}
@@ -595,65 +575,14 @@ become savings in time in our implementation.
 \label{sec:conclusion}
 % =====================================================================================
 
-We compared four replanning strategies on 360 problems from real game maps, against no changes,
-random changes and a saboteur that blocks the character's route on purpose. Against random
-changes, a lazy A* that replans only when its path is broken did the least total search.
-Against the saboteur, \dstar{} needed about four times fewer expansions than both A* variants,
-because every block broke their paths. \dstar{}'s worst single replan was not reliably smaller,
-and in Python its more expensive expansions cancelled its savings in time. For a game in which
-the player is the saboteur, such as Outwit, \dstar{} is the better choice in search effort, but
-its repair spikes and its cost per expansion should be measured in the game itself. Natural next
-steps are partial sensing, opponents that also free cells, stronger interdiction models, and
-measurements of frame time in the game engine.
+On 360 problems from real game maps, lazy A* did the least search against random changes, while
+against a saboteur \dstar{} needed about four times fewer expansions than both A* variants. Its
+worst single replan was not reliably smaller, and in Python its costlier expansions cancelled its
+savings in time. For a game in which the player is the saboteur, such as Outwit, \dstar{} is the
+better choice in search effort; its repair spikes and per-expansion cost should next be measured
+in the game itself, together with partial sensing, opponents that also free cells, and stronger
+interdiction models.
 
-% =====================================================================================
-% IEEE order: appendices, then acknowledgment, then references.
-% The appendix is set in one column so its wide figures and tables follow each other in
-% order instead of floating past the references; \FloatBarrier keeps each set together.
-\onecolumn
-\appendices
-% =====================================================================================
-\section{Additional Figures}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=\textwidth]{fig1_expansions_vs_distance.pdf}
-\caption{Mean expansions per change event against the Manhattan distance from the blocked cell to
-the goal (binned; symmetric log scale). One panel per prankster that changes the map. Random-local
-blocks are never 300 or more cells from the goal.}
-\label{fig:dist}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=\textwidth]{fig4_path_overhead.pdf}
-\caption{Path length overhead: steps walked divided by the initial optimal length (1 = no detour),
-by planner, prankster (rows) and map set (columns), log scale.}
-\label{fig:overhead}
-\end{figure}
-
-\FloatBarrier
-\section{Results per Map Set}
-The tables below repeat the main analysis for each map set ($n=120$ problems per set). No map set
-shows a significant result in the opposite direction to the overall result; seven comparisons
-that are significant overall are not significant in one set (random global replanning and hitch
-against A* lazy on dao; the saboteur hitch on street and room; random local total effort against
-A* lazy on room).
-
-\input{tables/tab_total_dao.tex}
-\input{tables/tab_hitch_dao.tex}
-\input{tables/tab_tests_dao.tex}
-\FloatBarrier
-\input{tables/tab_total_street.tex}
-\input{tables/tab_hitch_street.tex}
-\input{tables/tab_tests_street.tex}
-\FloatBarrier
-\input{tables/tab_total_room.tex}
-\input{tables/tab_hitch_room.tex}
-\input{tables/tab_tests_room.tex}
-\FloatBarrier
-
-\twocolumn   % back to the IEEE two-column layout for the acknowledgment and references
 \section*{Acknowledgment}
 % STUDENT: add or remove as appropriate.
 The maps are from the Moving AI Lab benchmarks~\cite{sturtevant2012benchmarks} (Open Data

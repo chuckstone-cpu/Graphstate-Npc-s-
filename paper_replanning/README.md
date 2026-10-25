@@ -87,17 +87,19 @@ longest paths under the new limit reproduced every count column and every event 
 
 ### Paper
 
-`paper/` holds the IEEE-format LaTeX paper (`main.tex`, `refs.bib`, `figures/`, `tables/`).
-The tables are generated from the analysis output, never typed by hand:
+`paper/` holds the final IEEE-format paper (12 pages: Times 12 pt, 1.25 line spacing):
+`main.tex`, `refs.bib` (26 references), `figures/` (Figs. 1-3 = `results/figures/fig5`, `fig2`,
+`fig3`) and `tables/`. The tables are generated from the analysis output, never typed by hand:
 
 ```
 python analysis/analyze.py          # results/tables, results/figures, results/SUMMARY.md
 python paper/make_tables.py         # paper/tables/*.tex
 ```
 
-Then copy `results/figures/*.pdf` to `paper/figures/` and upload `paper/overleaf_upload.zip` to
-Overleaf (New Project -> Upload Project; compiler pdfLaTeX). `paper/main.pdf` is a preview built
-locally with Tectonic (XeTeX engine); Overleaf's pdfLaTeX output may differ by a line or two.
+For Overleaf, upload `main.tex`, `refs.bib`, `figures/` and `tables/` (New Project -> Upload
+Project, compiler pdfLaTeX). `paper/main.pdf` is the final version, built locally with Tectonic
+(XeTeX engine); Overleaf's pdfLaTeX output may differ by a line or two. Details still to check
+before submission are marked `% STUDENT` and `% CHECK` in the sources.
 
 ### Timing
 

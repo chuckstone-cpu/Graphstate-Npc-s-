@@ -1,0 +1,19 @@
+\begin{table}[!t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{\dstar{} vs.\ A* lazy per map set. Total effort: median \dstar{}/A* lazy ratio (Holm $p$); hitch: W/T/L and Holm $p$. Columns as in Table~\ref{tab:tests}.}
+\label{tab:sets}
+\begin{tabular}{lccccc}
+\toprule
+ & & Total, & Total, & \multicolumn{2}{c}{Hitch, saboteur} \\
+Set & $n$ & random global & saboteur & W/T/L & $p$ \\
+\midrule
+Dao & 120 & 1.6 ($<$0.001) & 0.41 ($<$0.001) & 85/0/35 & $<$0.001 \\
+Street & 120 & 3.3 ($<$0.001) & 0.54 ($<$0.001) & 67/0/53 & 0.351 \\
+Room & 120 & 1.4 ($<$0.001) & 0.29 ($<$0.001) & 61/0/59 & 1.000 \\
+\midrule
+All & 360 & 1.7 ($<$0.001) & 0.36 ($<$0.001) & 213/0/147 & 0.042 \\
+\bottomrule
+\end{tabular}
+\end{table}

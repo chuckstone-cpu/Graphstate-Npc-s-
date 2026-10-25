@@ -84,6 +84,35 @@ def tests_table(tests, scope, metrics, label, caption, explain=False):
         r"\midrule", *body, r"\bottomrule", r"\end{tabular}", r"\end{table*}", ""])
 
 
+def sets_table(tests):
+    """One compact table: the key D* Lite vs A* lazy comparisons, overall and per map set."""
+    def get(scope, metric, prank):
+        return tests[(tests.scope == scope) & (tests.metric == metric) & (tests.prankster == prank)
+                     & (tests.baseline == "astar_lazy")].iloc[0]
+
+    def ratio_p(t):
+        return f"{fmt_ratio(t.median_ratio)} ({fmt_p(t.p_holm)})".replace("< ", "$<$")
+
+    rows = []
+    for scope in ["dao", "street", "room", "all"]:
+        rg, sab, hitch = get(scope, "total", "random_global"), get(scope, "total", "saboteur"), \
+            get(scope, "hitch", "saboteur")
+        name = SCOPE_NAME[scope].capitalize() if scope != "all" else "All"
+        rows.append(" & ".join([name, str(sab.n_pairs), ratio_p(rg), ratio_p(sab),
+                                f"{hitch.wins}/{hitch.ties}/{hitch.losses}",
+                                fmt_p(hitch.p_holm).replace("< ", "$<$")]) + r" \\")
+        if scope == "room":
+            rows.append(r"\midrule")
+    return "\n".join([
+        r"\begin{table}[!t]", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{3pt}",
+        r"\caption{\dstar{} vs.\ A* lazy per map set. Total effort: median \dstar{}/A* lazy ratio "
+        r"(Holm $p$); hitch: W/T/L and Holm $p$. Columns as in Table~\ref{tab:tests}.}",
+        r"\label{tab:sets}", r"\begin{tabular}{lccccc}", r"\toprule",
+        r" & & Total, & Total, & \multicolumn{2}{c}{Hitch, saboteur} \\",
+        r"Set & $n$ & random global & saboteur & W/T/L & $p$ \\", r"\midrule",
+        *rows, r"\bottomrule", r"\end{tabular}", r"\end{table}", ""])
+
+
 def time_table(time_summary, runs):
     rows, n = means_rows(time_summary, "all", "total_ms", PRANKSTERS)
     runs = runs.assign(exp=runs.initial_expansions + runs.replan_expansions_total,
@@ -107,29 +136,18 @@ def main():
     tests = pd.read_csv(TABLES / "paired_tests.csv")
     time_summary = pd.read_csv(TABLES / "time_summary_secondary.csv")
     runs = pd.read_csv(ROOT / "results" / "runs.csv")
-    changing = ["random_global", "random_local", "saboteur"]
-
     files = {
         "tab_total_all.tex": means_table(summary, "all", "total", "tab:total",
                                          "Total search effort (first plan + all replans)"),
-        "tab_replan_all.tex": means_table(summary, "all", "replan", "tab:replan",
-                                          "Replanning effort (all replans, first plan excluded)", changing),
-        "tab_hitch_all.tex": means_table(summary, "all", "hitch", "tab:hitch",
-                                         "Worst single replan per run (the ``hitch'')", changing),
         "tab_tests_main.tex": tests_table(tests, "all", ["total", "hitch"], "tab:tests",
                                           "Paired comparisons of D* Lite with both A* variants for total effort and the hitch",
                                           explain=True),
-        "tab_tests_replan.tex": tests_table(tests, "all", ["replan"], "tab:tests-replan",
-                                            "Paired comparisons of replanning effort"),
+        "tab_sets.tex": sets_table(tests),
         "tab_time.tex": time_table(time_summary, runs),
     }
-    for scope in ["dao", "street", "room"]:
-        files[f"tab_total_{scope}.tex"] = means_table(summary, scope, "total", f"tab:total-{scope}",
-                                                      "Total search effort")
-        files[f"tab_hitch_{scope}.tex"] = means_table(summary, scope, "hitch", f"tab:hitch-{scope}",
-                                                      "Worst single replan", changing)
-        files[f"tab_tests_{scope}.tex"] = tests_table(tests, scope, ["total", "replan", "hitch"],
-                                                      f"tab:tests-{scope}", "Paired comparisons")
+    for old in OUT.glob("*.tex"):                    # remove tables the paper no longer uses
+        if old.name not in files:
+            old.unlink()
     for name, text in files.items():
         (OUT / name).write_text(text, encoding="utf-8")
     print(f"wrote {len(files)} tables to {OUT}")

@@ -9,3 +9,5 @@ __pycache__/
 results/smoke/
 # Pre-merge copies of runs.csv/events.csv (made by scripts/merge_capped_reruns.py)
 results/backup/
+# Overleaf upload bundle (rebuilt from paper/; see README)
+paper/overleaf_upload.zip
