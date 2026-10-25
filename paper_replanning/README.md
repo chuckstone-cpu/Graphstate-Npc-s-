@@ -85,6 +85,20 @@ room map `64room_009` produced planned paths of up to **1999 cells**, measured b
 every path it uses is complete, that assert never fired, and re-running the 67 runs with the
 longest paths under the new limit reproduced every count column and every event exactly.
 
+### Paper
+
+`paper/` holds the IEEE-format LaTeX paper (`main.tex`, `refs.bib`, `figures/`, `tables/`).
+The tables are generated from the analysis output, never typed by hand:
+
+```
+python analysis/analyze.py          # results/tables, results/figures, results/SUMMARY.md
+python paper/make_tables.py         # paper/tables/*.tex
+```
+
+Then copy `results/figures/*.pdf` to `paper/figures/` and upload `paper/overleaf_upload.zip` to
+Overleaf (New Project -> Upload Project; compiler pdfLaTeX). `paper/main.pdf` is a preview built
+locally with Tectonic (XeTeX engine); Overleaf's pdfLaTeX output may differ by a line or two.
+
 ### Timing
 
 Expansions (cells taken out of the open list) are the main metric because they do not depend on the

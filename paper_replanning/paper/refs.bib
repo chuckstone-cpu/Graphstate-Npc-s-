@@ -1,0 +1,268 @@
+% References for "Replanning Against a Saboteur".
+% Every entry was checked against the publisher, the authors' institutional page, DBLP or a
+% library record (October 2026). Lines marked % CHECK are details we could not confirm from a
+% primary source: check them against the PDF before submission.
+
+% ---------------------------------------------------------------- heuristic search
+@article{hart1968astar,
+  author  = {Hart, Peter E. and Nilsson, Nils J. and Raphael, Bertram},
+  title   = {A Formal Basis for the Heuristic Determination of Minimum Cost Paths},
+  journal = {IEEE Transactions on Systems Science and Cybernetics},
+  volume  = {4},
+  number  = {2},
+  pages   = {100--107},
+  year    = {1968},
+  doi     = {10.1109/TSSC.1968.300136}
+}
+
+@book{russell2020aima,
+  author    = {Russell, Stuart and Norvig, Peter},
+  title     = {Artificial Intelligence: A Modern Approach},
+  edition   = {4th},
+  publisher = {Pearson},
+  address   = {Hoboken, NJ},
+  year      = {2020}
+}
+
+% ---------------------------------------------------------------- incremental search
+@inproceedings{stentz1994dstar,
+  author    = {Stentz, Anthony},
+  title     = {Optimal and Efficient Path Planning for Partially-Known Environments},
+  booktitle = {Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+  volume    = {4},
+  pages     = {3310--3317},
+  address   = {San Diego, CA, USA},
+  year      = {1994},
+  doi       = {10.1109/ROBOT.1994.351061}
+}
+
+@inproceedings{stentz1995focussed,
+  author    = {Stentz, Anthony},
+  title     = {The Focussed {D*} Algorithm for Real-Time Replanning},
+  booktitle = {Proceedings of the 14th International Joint Conference on Artificial Intelligence (IJCAI)},
+  pages     = {1652--1659},
+  year      = {1995}
+}
+
+% CHECK (ramalingam1996incremental): volume, number and pages against the publisher's page.
+@article{ramalingam1996incremental,
+  author  = {Ramalingam, G. and Reps, Thomas},
+  title   = {An Incremental Algorithm for a Generalization of the Shortest-Path Problem},
+  journal = {Journal of Algorithms},
+  volume  = {21},
+  number  = {2},
+  pages   = {267--305},
+  year    = {1996}
+}
+
+@article{koenig2004lpa,
+  author  = {Koenig, Sven and Likhachev, Maxim and Furcy, David},
+  title   = {Lifelong Planning {A*}},
+  journal = {Artificial Intelligence},
+  volume  = {155},
+  number  = {1--2},
+  pages   = {93--146},
+  year    = {2004}
+}
+
+@article{koenig2004incremental,
+  author  = {Koenig, Sven and Likhachev, Maxim and Liu, Yaxin and Furcy, David},
+  title   = {Incremental Heuristic Search in Artificial Intelligence},
+  journal = {AI Magazine},
+  volume  = {25},
+  number  = {2},
+  pages   = {99--112},
+  year    = {2004}
+}
+
+@inproceedings{koenig2002dstarlite,
+  author    = {Koenig, Sven and Likhachev, Maxim},
+  title     = {{D*} {L}ite},
+  booktitle = {Proceedings of the 18th National Conference on Artificial Intelligence (AAAI)},
+  pages     = {476--483},
+  year      = {2002}
+}
+
+@article{koenig2005fast,
+  author  = {Koenig, Sven and Likhachev, Maxim},
+  title   = {Fast Replanning for Navigation in Unknown Terrain},
+  journal = {IEEE Transactions on Robotics},
+  volume  = {21},
+  number  = {3},
+  pages   = {354--363},
+  year    = {2005},
+  doi     = {10.1109/TRO.2004.838026}
+}
+
+@inproceedings{likhachev2005ad,
+  author    = {Likhachev, Maxim and Ferguson, Dave and Gordon, Geoffrey and Stentz, Anthony and Thrun, Sebastian},
+  title     = {Anytime Dynamic {A*}: An Anytime, Replanning Algorithm},
+  booktitle = {Proceedings of the 15th International Conference on Automated Planning and Scheduling (ICAPS)},
+  pages     = {262--271},
+  year      = {2005}
+}
+
+@inproceedings{sun2010mtdstarlite,
+  author    = {Sun, Xiaoxun and Yeoh, William and Koenig, Sven},
+  title     = {Moving Target {D*} {L}ite},
+  booktitle = {Proceedings of the 9th International Conference on Autonomous Agents and Multiagent Systems (AAMAS)},
+  pages     = {67--74},
+  year      = {2010}
+}
+
+@inproceedings{hernandez2012poorly,
+  author    = {Hern{\'a}ndez, Carlos and Baier, Jorge A. and Uras, Tansel and Koenig, Sven},
+  title     = {Position Paper: Incremental Search Algorithms Considered Poorly Understood},
+  booktitle = {Proceedings of the 5th Annual Symposium on Combinatorial Search (SoCS)},
+  pages     = {159--161},
+  year      = {2012},
+  doi       = {10.1609/socs.v3i1.18268}
+}
+
+@inproceedings{hernandez2014mpaa,
+  author    = {Hern{\'a}ndez, Carlos and Baier, Jorge A. and As{\'i}n, Roberto},
+  title     = {Making {A*} Run Faster than {D*}-{L}ite for Path-Planning in Partially Known Terrain},
+  booktitle = {Proceedings of the 24th International Conference on Automated Planning and Scheduling (ICAPS)},
+  pages     = {504--508},
+  year      = {2014},
+  doi       = {10.1609/icaps.v24i1.13675}
+}
+
+% ---------------------------------------------------------------- game pathfinding
+% CHECK (sturtevant2012benchmarks): add the DOI from IEEE Xplore.
+@article{sturtevant2012benchmarks,
+  author  = {Sturtevant, Nathan R.},
+  title   = {Benchmarks for Grid-Based Pathfinding},
+  journal = {IEEE Transactions on Computational Intelligence and AI in Games},
+  volume  = {4},
+  number  = {2},
+  pages   = {144--148},
+  year    = {2012}
+}
+
+% CHECK (botea2004hpa): pages; two records give 7--28, one database lists pp. 1--22.
+@article{botea2004hpa,
+  author  = {Botea, Adi and M{\"u}ller, Martin and Schaeffer, Jonathan},
+  title   = {Near Optimal Hierarchical Path-Finding},
+  journal = {Journal of Game Development},
+  volume  = {1},
+  number  = {1},
+  pages   = {7--28},
+  year    = {2004}
+}
+
+@inproceedings{harabor2011jps,
+  author    = {Harabor, Daniel and Grastien, Alban},
+  title     = {Online Graph Pruning for Pathfinding on Grid Maps},
+  booktitle = {Proceedings of the 25th AAAI Conference on Artificial Intelligence},
+  pages     = {1114--1119},
+  year      = {2011},
+  doi       = {10.1609/aaai.v25i1.7994}
+}
+
+@article{baier2015prey,
+  author  = {Baier, Jorge A. and Botea, Adi and Harabor, Daniel and Hern{\'a}ndez, Carlos},
+  title   = {Fast Algorithm for Catching a Prey Quickly in Known and Partially Known Game Maps},
+  journal = {IEEE Transactions on Computational Intelligence and AI in Games},
+  volume  = {7},
+  number  = {2},
+  pages   = {193--199},
+  year    = {2015},
+  doi     = {10.1109/TCIAIG.2014.2337889}
+}
+
+@inproceedings{orkin2006fear,
+  author    = {Orkin, Jeff},
+  title     = {Three States and a Plan: The {A.I.} of {F.E.A.R.}},
+  booktitle = {Proceedings of the Game Developers Conference (GDC)},
+  address   = {San Jose, CA, USA},
+  year      = {2006}
+}
+
+@article{uludagli2023npc,
+  author  = {Uluda{\u{g}}l{\i}, Muhtar {\c{C}}a{\u{g}}kan and O{\u{g}}uz, Kaya},
+  title   = {Non-Player Character Decision-Making in Computer Games},
+  journal = {Artificial Intelligence Review},
+  volume  = {56},
+  number  = {12},
+  pages   = {14159--14191},
+  year    = {2023},
+  doi     = {10.1007/s10462-023-10491-7}
+}
+
+% ---------------------------------------------------------------- network interdiction
+@article{fulkerson1977maximizing,
+  author  = {Fulkerson, D. R. and Harding, Gary C.},
+  title   = {Maximizing the Minimum Source-Sink Path Subject to a Budget Constraint},
+  journal = {Mathematical Programming},
+  volume  = {13},
+  number  = {1},
+  pages   = {116--118},
+  year    = {1977},
+  doi     = {10.1007/BF01584329}
+}
+
+@article{israeli2002interdiction,
+  author  = {Israeli, Eitan and Wood, R. Kevin},
+  title   = {Shortest-Path Network Interdiction},
+  journal = {Networks},
+  volume  = {40},
+  number  = {2},
+  pages   = {97--111},
+  year    = {2002},
+  doi     = {10.1002/net.10039}
+}
+
+@article{smith2020interdiction,
+  author  = {Smith, J. Cole and Song, Yongjia},
+  title   = {A Survey of Network Interdiction Models and Algorithms},
+  journal = {European Journal of Operational Research},
+  volume  = {283},
+  number  = {3},
+  pages   = {797--811},
+  year    = {2020},
+  doi     = {10.1016/j.ejor.2019.06.024}
+}
+
+% ---------------------------------------------------------------- statistics
+@article{wilcoxon1945,
+  author  = {Wilcoxon, Frank},
+  title   = {Individual Comparisons by Ranking Methods},
+  journal = {Biometrics Bulletin},
+  volume  = {1},
+  number  = {6},
+  pages   = {80--83},
+  year    = {1945},
+  doi     = {10.2307/3001968}
+}
+
+@article{efron1979bootstrap,
+  author  = {Efron, Bradley},
+  title   = {Bootstrap Methods: Another Look at the Jackknife},
+  journal = {The Annals of Statistics},
+  volume  = {7},
+  number  = {1},
+  pages   = {1--26},
+  year    = {1979},
+  doi     = {10.1214/aos/1176344552}
+}
+
+@article{holm1979,
+  author  = {Holm, Sture},
+  title   = {A Simple Sequentially Rejective Multiple Test Procedure},
+  journal = {Scandinavian Journal of Statistics},
+  volume  = {6},
+  number  = {2},
+  pages   = {65--70},
+  year    = {1979}
+}
+
+% CHECK (kerby2014simple): the DOI suffix (IT.3.1) implies volume 3; confirm.
+@article{kerby2014simple,
+  author  = {Kerby, Dave S.},
+  title   = {The Simple Difference Formula: An Approach to Teaching Nonparametric Correlation},
+  journal = {Comprehensive Psychology},
+  volume  = {3},
+  year    = {2014},
+  doi     = {10.2466/11.IT.3.1}
+}

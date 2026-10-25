@@ -1,0 +1,27 @@
+\begin{table*}[!t]
+\centering
+\footnotesize
+\caption{Paired comparisons of D* Lite with both A* variants for total effort and the hitch (all maps, $n=360$ paired problems). W/T/L = problems where D* Lite searched less / the same / more; ratio = median D*/baseline over the $n$ problems where the baseline is $>0$; $r$ = matched-pairs rank-biserial correlation (positive favours D* Lite); $p$ = Wilcoxon signed-rank, Holm-adjusted over all 80 tests.}
+\label{tab:tests}
+\begin{tabular}{lllcccc}
+\toprule
+Metric & Prankster & Comparison & W/T/L & Median ratio ($n$) & $r$ & $p$ (Holm) \\
+\midrule
+Total effort & None & D* Lite vs A* lazy & 80/1/279 & 1.8 (360) & $-0.68$ & $<$ 0.001 \\
+Total effort & None & D* Lite vs A* restart & 80/1/279 & 1.8 (360) & $-0.68$ & $<$ 0.001 \\
+Total effort & Random global & D* Lite vs A* lazy & 84/1/275 & 1.7 (360) & $-0.64$ & $<$ 0.001 \\
+Total effort & Random global & D* Lite vs A* restart & 314/0/46 & 0.22 (360) & $+0.92$ & $<$ 0.001 \\
+Total effort & Random local & D* Lite vs A* lazy & 116/1/243 & 1.6 (360) & $-0.37$ & $<$ 0.001 \\
+Total effort & Random local & D* Lite vs A* restart & 315/0/45 & 0.23 (360) & $+0.91$ & $<$ 0.001 \\
+Total effort & Saboteur & D* Lite vs A* lazy & 305/0/55 & 0.36 (360) & $+0.89$ & $<$ 0.001 \\
+Total effort & Saboteur & D* Lite vs A* restart & 305/0/55 & 0.36 (360) & $+0.89$ & $<$ 0.001 \\
+\midrule
+Worst single replan & Random global & D* Lite vs A* lazy & 35/188/137 & 0.033 (37) & $-0.28$ & 0.011 \\
+Worst single replan & Random global & D* Lite vs A* restart & 356/0/4 & 0 (360) & $+1.00$ & $<$ 0.001 \\
+Worst single replan & Random local & D* Lite vs A* lazy & 207/19/134 & 0.034 (236) & $+0.62$ & $<$ 0.001 \\
+Worst single replan & Random local & D* Lite vs A* restart & 348/0/12 & 0.0058 (360) & $+0.96$ & $<$ 0.001 \\
+Worst single replan & Saboteur & D* Lite vs A* lazy & 213/0/147 & 0.82 (360) & $+0.17$ & 0.042 \\
+Worst single replan & Saboteur & D* Lite vs A* restart & 213/0/147 & 0.82 (360) & $+0.17$ & 0.042 \\
+\bottomrule
+\end{tabular}
+\end{table*}

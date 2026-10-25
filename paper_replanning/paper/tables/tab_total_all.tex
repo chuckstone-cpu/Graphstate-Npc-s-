@@ -1,0 +1,16 @@
+\begin{table*}[!t]
+\centering
+\footnotesize
+\caption{Total search effort (first plan + all replans) (all maps, $n=360$ runs per cell). Mean expansions with 95\% bootstrap confidence interval.}
+\label{tab:total}
+\begin{tabular}{lcccc}
+\toprule
+Planner & None & Random global & Random local & Saboteur \\
+\midrule
+BFS restart & 17,701 [16,042, 19,419] & 266,291 [237,961, 295,000] & 268,998 [239,035, 299,447] & 1,137,497 [986,324, 1,297,714] \\
+A* restart & 1,571 [1,387, 1,773] & 18,687 [16,141, 21,407] & 18,874 [16,154, 21,787] & 354,770 [284,301, 429,135] \\
+A* lazy & 1,571 [1,387, 1,773] & 1,641 [1,447, 1,846] & 2,328 [1,987, 2,688] & 354,770 [284,301, 429,135] \\
+D* Lite & 2,599 [2,375, 2,846] & 2,610 [2,379, 2,841] & 2,718 [2,494, 2,968] & 86,989 [70,247, 105,402] \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,16 @@
+\begin{table*}[!t]
+\centering
+\footnotesize
+\caption{Total search effort (street, $n=120$ runs per cell). Mean expansions with 95\% bootstrap confidence interval.}
+\label{tab:total-street}
+\begin{tabular}{lcccc}
+\toprule
+Planner & None & Random global & Random local & Saboteur \\
+\midrule
+BFS restart & 21,846 [19,913, 23,698] & 350,760 [306,532, 397,124] & 352,045 [305,950, 398,872] & 424,331 [371,121, 475,926] \\
+A* restart & 1,349 [1,057, 1,696] & 17,027 [13,104, 21,510] & 17,046 [12,750, 21,899] & 29,946 [22,243, 38,816] \\
+A* lazy & 1,349 [1,057, 1,696] & 1,413 [1,100, 1,766] & 1,969 [1,468, 2,552] & 29,946 [22,243, 38,816] \\
+D* Lite & 3,040 [2,697, 3,412] & 3,044 [2,698, 3,395] & 3,115 [2,738, 3,472] & 8,202 [6,838, 9,699] \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,34 @@
+\begin{table*}[!t]
+\centering
+\footnotesize
+\caption{Paired comparisons (room, $n=120$ paired problems). Columns as in Table~\ref{tab:tests}.}
+\label{tab:tests-room}
+\begin{tabular}{lllcccc}
+\toprule
+Metric & Prankster & Comparison & W/T/L & Median ratio ($n$) & $r$ & $p$ (Holm) \\
+\midrule
+Total effort & None & D* Lite vs A* lazy & 35/0/85 & 1.4 (120) & $-0.52$ & $<$ 0.001 \\
+Total effort & None & D* Lite vs A* restart & 35/0/85 & 1.4 (120) & $-0.52$ & $<$ 0.001 \\
+Total effort & Random global & D* Lite vs A* lazy & 35/0/85 & 1.4 (120) & $-0.52$ & $<$ 0.001 \\
+Total effort & Random global & D* Lite vs A* restart & 112/0/8 & 0.15 (120) & $+0.98$ & $<$ 0.001 \\
+Total effort & Random local & D* Lite vs A* lazy & 48/0/72 & 1.2 (120) & $-0.16$ & 0.612 \\
+Total effort & Random local & D* Lite vs A* restart & 112/0/8 & 0.16 (120) & $+0.98$ & $<$ 0.001 \\
+Total effort & Saboteur & D* Lite vs A* lazy & 115/0/5 & 0.29 (120) & $+0.99$ & $<$ 0.001 \\
+Total effort & Saboteur & D* Lite vs A* restart & 115/0/5 & 0.29 (120) & $+0.99$ & $<$ 0.001 \\
+\midrule
+Replanning effort & Random global & D* Lite vs A* lazy & 0/103/17 & - (0) & $-1.00$ & 0.001 \\
+Replanning effort & Random global & D* Lite vs A* restart & 120/0/0 & 0 (120) & $+1.00$ & $<$ 0.001 \\
+Replanning effort & Random local & D* Lite vs A* lazy & 67/4/49 & 0.038 (75) & $+0.55$ & $<$ 0.001 \\
+Replanning effort & Random local & D* Lite vs A* restart & 120/0/0 & 0.00062 (120) & $+1.00$ & $<$ 0.001 \\
+Replanning effort & Saboteur & D* Lite vs A* lazy & 117/0/3 & 0.29 (120) & $+0.99$ & $<$ 0.001 \\
+Replanning effort & Saboteur & D* Lite vs A* restart & 117/0/3 & 0.29 (120) & $+0.99$ & $<$ 0.001 \\
+\midrule
+Worst single replan & Random global & D* Lite vs A* lazy & 0/103/17 & - (0) & $-1.00$ & $<$ 0.001 \\
+Worst single replan & Random global & D* Lite vs A* restart & 120/0/0 & 0 (120) & $+1.00$ & $<$ 0.001 \\
+Worst single replan & Random local & D* Lite vs A* lazy & 67/4/49 & 0.019 (75) & $+0.54$ & $<$ 0.001 \\
+Worst single replan & Random local & D* Lite vs A* restart & 114/0/6 & 0.0024 (120) & $+0.92$ & $<$ 0.001 \\
+Worst single replan & Saboteur & D* Lite vs A* lazy & 61/0/59 & 0.98 (120) & $-0.01$ & 1.000 \\
+Worst single replan & Saboteur & D* Lite vs A* restart & 61/0/59 & 0.98 (120) & $-0.01$ & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table*}

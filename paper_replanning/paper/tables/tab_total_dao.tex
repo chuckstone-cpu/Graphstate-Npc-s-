@@ -1,0 +1,16 @@
+\begin{table*}[!t]
+\centering
+\footnotesize
+\caption{Total search effort (dao, $n=120$ runs per cell). Mean expansions with 95\% bootstrap confidence interval.}
+\label{tab:total-dao}
+\begin{tabular}{lcccc}
+\toprule
+Planner & None & Random global & Random local & Saboteur \\
+\midrule
+BFS restart & 3,923 [3,237, 4,613] & 68,115 [52,754, 85,533] & 68,320 [51,613, 85,696] & 84,845 [65,288, 105,847] \\
+A* restart & 917 [723, 1,139] & 9,872 [6,809, 13,279] & 9,863 [6,912, 13,405] & 15,172 [10,616, 20,912] \\
+A* lazy & 917 [723, 1,139] & 1,062 [822, 1,331] & 1,373 [1,037, 1,755] & 15,172 [10,616, 20,912] \\
+D* Lite & 1,434 [1,183, 1,694] & 1,463 [1,216, 1,717] & 1,465 [1,220, 1,730] & 3,849 [3,111, 4,730] \\
+\bottomrule
+\end{tabular}
+\end{table*}

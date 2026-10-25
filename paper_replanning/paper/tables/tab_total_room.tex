@@ -1,0 +1,16 @@
+\begin{table*}[!t]
+\centering
+\footnotesize
+\caption{Total search effort (room, $n=120$ runs per cell). Mean expansions with 95\% bootstrap confidence interval.}
+\label{tab:total-room}
+\begin{tabular}{lcccc}
+\toprule
+Planner & None & Random global & Random local & Saboteur \\
+\midrule
+BFS restart & 27,333 [23,915, 30,967] & 379,999 [320,534, 445,176] & 386,628 [328,346, 445,212] & 2,903,314 [2,649,186, 3,178,983] \\
+A* restart & 2,448 [2,083, 2,831] & 29,161 [23,850, 35,019] & 29,714 [24,345, 35,781] & 1,019,192 [862,073, 1,195,341] \\
+A* lazy & 2,448 [2,083, 2,831] & 2,448 [2,062, 2,861] & 3,642 [2,928, 4,478] & 1,019,192 [862,073, 1,195,341] \\
+D* Lite & 3,325 [2,897, 3,814] & 3,325 [2,883, 3,800] & 3,575 [3,124, 4,045] & 248,916 [213,713, 288,576] \\
+\bottomrule
+\end{tabular}
+\end{table*}

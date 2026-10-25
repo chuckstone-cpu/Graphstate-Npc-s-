@@ -1,0 +1,16 @@
+\begin{table*}[!t]
+\centering
+\footnotesize
+\caption{Replanning effort (all replans, first plan excluded) (all maps, $n=360$ runs per cell). Mean expansions with 95\% bootstrap confidence interval.}
+\label{tab:replan}
+\begin{tabular}{lccc}
+\toprule
+Planner & Random global & Random local & Saboteur \\
+\midrule
+BFS restart & 248,591 [221,232, 276,144] & 251,297 [222,538, 278,719] & 1,119,796 [967,104, 1,284,075] \\
+A* restart & 17,116 [14,617, 19,662] & 17,303 [14,817, 19,885] & 353,199 [285,034, 431,378] \\
+A* lazy & 69.7 [34.0, 114] & 757 [574, 961] & 353,199 [285,034, 431,378] \\
+D* Lite & 10.8 [5.1, 17.9] & 119 [74.3, 176] & 84,390 [67,084, 102,926] \\
+\bottomrule
+\end{tabular}
+\end{table*}
